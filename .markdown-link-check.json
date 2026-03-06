@@ -1,0 +1,32 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://github.com/abhipray-cpu/concurx/discussions"
+    },
+    {
+      "pattern": "^https://github.com/abhipray-cpu/concurx/actions"
+    },
+    {
+      "pattern": "^https://pkg.go.dev/"
+    },
+    {
+      "pattern": "^https://codecov.io/"
+    },
+    {
+      "pattern": "^https://goreportcard.com/"
+    },
+    {
+      "pattern": "^mailto:"
+    }
+  ],
+  "timeout": "10s",
+  "retryOn429": true,
+  "retryCount": 3,
+  "aliveStatusCodes": [
+    200,
+    206,
+    301,
+    302,
+    403
+  ]
+}

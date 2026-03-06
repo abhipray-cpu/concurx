@@ -1,0 +1,33 @@
+# Markdownlint configuration for concurx
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+default: true
+
+# Allow inline HTML (badges, etc.)
+MD033: false
+
+# Allow multiple headings with the same content
+MD024:
+  siblings_only: true
+
+# Allow long lines (code blocks, tables, links)
+MD013:
+  line_length: 300
+  code_blocks: false
+  tables: false
+
+# Allow trailing punctuation in headings (e.g., "What is concurx?")
+MD026:
+  punctuation: ".,;:!"
+
+# Allow multiple blank lines (visual separation)
+MD012: false
+
+# Allow bare URLs
+MD034: false
+
+# First line doesn't have to be top-level heading
+MD041: false
+
+# Allow emphasis as heading
+MD036: false

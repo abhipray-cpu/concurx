@@ -1,0 +1,172 @@
+name: 🚀 Performance Issue
+description: Report a performance problem or regression
+title: "[Performance]: "
+labels: ["performance", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a performance issue! Performance is critical for concurx, so please provide detailed information to help us investigate.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-flight Checklist
+      options:
+        - label: I have searched existing issues to ensure this is not a duplicate
+          required: true
+        - label: I have profiled my application to identify the bottleneck
+          required: true
+        - label: I have tested with the latest version of concurx
+          required: true
+
+  - type: dropdown
+    id: performance-type
+    attributes:
+      label: Performance Issue Type
+      description: What kind of performance issue are you experiencing?
+      options:
+        - High CPU usage
+        - High memory usage
+        - Memory leak
+        - Slow execution time
+        - Poor throughput
+        - High latency
+        - Goroutine leak
+        - Deadlock/blocking
+        - Performance regression
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected Component
+      description: Which concurx component has the performance issue?
+      options:
+        - Group (concurrent task execution)
+        - Supervisor (fault tolerance)
+        - WorkerGroup (worker management)
+        - Bulkhead pattern
+        - FanOut pattern
+        - Pipeline pattern
+        - ScatterGather pattern
+        - Throttler pattern
+        - MapReduce pattern
+        - WorkerPerCore pattern
+        - CircuitBreaker pattern
+        - Retry pattern
+        - RateLimiter pattern
+        - Timeout pattern
+        - Circuit Breaker
+        - Backoff strategies
+        - Multiple components
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Performance Issue Description
+      description: Describe the performance problem in detail
+      placeholder: |
+        - What specific performance issue are you observing?
+        - When did you first notice this issue?
+        - How does it impact your application?
+        - Is this a regression from a previous version?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction Steps
+      description: Provide a minimal reproducible example
+      render: go
+      placeholder: |
+        // Minimal example that demonstrates the performance issue
+        package main
+        
+        import (
+            "context"
+            "time"
+            "github.com/abhipray-cpu/concurx"
+        )
+        
+        func main() {
+            // Your performance test case...
+        }
+    validations:
+      required: true
+
+  - type: textarea
+    id: benchmarks
+    attributes:
+      label: Benchmark Results
+      description: Provide benchmark results if available
+      render: shell
+      placeholder: |
+        # Run: go test -bench=. -benchmem -cpuprofile=cpu.prof -memprofile=mem.prof
+        BenchmarkYourTest-8    1000000    1234 ns/op    567 B/op    8 allocs/op
+        
+        # Include before/after results if this is a regression
+        
+        # CPU/Memory profile snippets if relevant
+
+  - type: textarea
+    id: profiling
+    attributes:
+      label: Profiling Data
+      description: Include relevant profiling information
+      placeholder: |
+        - CPU profile top functions
+        - Memory allocation patterns
+        - Goroutine dump if relevant
+        - Any other profiling insights
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Your runtime environment
+      placeholder: |
+        - Go version:
+        - Concurx version:
+        - OS/Architecture:
+        - Hardware specs (CPU/RAM):
+        - Container/virtualization:
+        - Load characteristics:
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-vs-actual
+    attributes:
+      label: Expected vs Actual Performance
+      description: What performance did you expect vs what you observed?
+      placeholder: |
+        Expected: Description of expected performance characteristics
+        Actual: What you're actually seeing
+        Impact: How this affects your application
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: Have you found any workarounds?
+      placeholder: Any temporary solutions or workarounds you've discovered...
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: |
+        - Related issues or PRs
+        - Performance requirements
+        - Timeline constraints
+        - Any other context that might help

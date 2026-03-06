@@ -1,0 +1,131 @@
+services:
+  # -----------------------------------------------------------------------
+  # Core application under test
+  # -----------------------------------------------------------------------
+  order-processor:
+    build:
+      context: ..
+      dockerfile: stress/docker/order-processor.Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - WORKERS=50
+      - QUEUE_SIZE=1000
+      - RATE_LIMIT_RPS=500
+      - BULKHEAD_CONCURRENCY=10
+      - CB_FAILURE_THRESHOLD=5
+      - CB_RECOVERY_TIMEOUT=30s
+      - RETRY_MAX_ATTEMPTS=3
+      - TIMEOUT_DURATION=5s
+      - INVENTORY_URL=http://inventory:8080
+      - PAYMENT_URL=http://payment:8080
+      - SHIPPING_URL=http://shipping:8080
+    depends_on:
+      inventory:
+        condition: service_started
+      payment:
+        condition: service_started
+      shipping:
+        condition: service_started
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "2.0"
+
+  # -----------------------------------------------------------------------
+  # Downstream mock services
+  # -----------------------------------------------------------------------
+  inventory:
+    build:
+      context: ..
+      dockerfile: stress/docker/mock-service.Dockerfile
+    environment:
+      - SERVICE_NAME=inventory
+      - FAILURE_RATE=0.05
+      - LATENCY_P50=10ms
+      - LATENCY_P99=200ms
+    restart: unless-stopped
+
+  payment:
+    build:
+      context: ..
+      dockerfile: stress/docker/mock-service.Dockerfile
+    environment:
+      - SERVICE_NAME=payment
+      - FAILURE_RATE=0.10
+      - LATENCY_P50=50ms
+      - LATENCY_P99=500ms
+    restart: unless-stopped
+
+  shipping:
+    build:
+      context: ..
+      dockerfile: stress/docker/mock-service.Dockerfile
+    environment:
+      - SERVICE_NAME=shipping
+      - FAILURE_RATE=0.02
+      - LATENCY_P50=20ms
+      - LATENCY_P99=100ms
+    restart: unless-stopped
+
+  # -----------------------------------------------------------------------
+  # Observability
+  # -----------------------------------------------------------------------
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    depends_on:
+      - order-processor
+
+  grafana:
+    image: grafana/grafana:11.4.0
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=concurx
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
+    volumes:
+      - ./config/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./config/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on:
+      - prometheus
+
+  # -----------------------------------------------------------------------
+  # Test runners (activated via --profile)
+  # -----------------------------------------------------------------------
+  load-generator:
+    build:
+      context: ..
+      dockerfile: stress/docker/load-generator.Dockerfile
+    environment:
+      - TARGET_URL=http://order-processor:8080
+      - RPS=1000
+      - DURATION=60s
+      - RAMP_UP=5s
+    depends_on:
+      - order-processor
+    profiles:
+      - test
+
+  chaos-agent:
+    build:
+      context: ..
+      dockerfile: stress/docker/chaos-agent.Dockerfile
+    environment:
+      - TARGET_CONTAINERS=inventory,payment,shipping
+      - CHAOS_INTERVAL=10s
+      - CHAOS_DURATION=5s
+      - CHAOS_TYPES=kill,pause
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    depends_on:
+      - order-processor
+    profiles:
+      - chaos

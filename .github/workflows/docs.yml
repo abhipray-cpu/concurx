@@ -1,0 +1,153 @@
+name: Documentation
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - '*.md'
+      - '.github/workflows/docs.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - '*.md'
+
+jobs:
+  validate-docs:
+    name: Validate Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check Markdown files
+        uses: DavidAnson/markdownlint-action@v1
+        with:
+          files: '**/*.md'
+          config: '.markdownlint.yml'
+          ignore: 'CHANGELOG.md'
+
+      - name: Check links in documentation
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: 'yes'
+          use-verbose-mode: 'yes'
+          config-file: '.markdown-link-check.json'
+
+      - name: Validate Mermaid diagrams
+        run: |
+          # Install mermaid-cli
+          npm install -g @mermaid-js/mermaid-cli
+          
+          # Find all Mermaid diagrams and validate them
+          find docs/ -name "*.md" -exec grep -l "```mermaid" {} \; | while read file; do
+            echo "Validating Mermaid diagrams in $file"
+            # Extract Mermaid diagrams and validate syntax
+            awk '/```mermaid/,/```/' "$file" | grep -v '```' > temp.mmd 2>/dev/null || true
+            if [ -s temp.mmd ]; then
+              mmdc -i temp.mmd -o temp.svg --quiet || {
+                echo "❌ Invalid Mermaid diagram found in $file"
+                exit 1
+              }
+            fi
+            rm -f temp.mmd temp.svg
+          done
+
+      - name: Check documentation structure
+        run: |
+          echo "## Documentation Structure Check" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Check required documentation files
+          required_files=(
+            "README.md"
+            "CONTRIBUTING.md"
+            "docs/ARCHITECTURE.md"
+            "docs/USAGE.md"
+          )
+          
+          for file in "${required_files[@]}"; do
+            if [ -f "$file" ]; then
+              echo "✅ $file exists" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "❌ $file missing" >> $GITHUB_STEP_SUMMARY
+              exit 1
+            fi
+          done
+          
+          # Check for TOC in major docs
+          major_docs=("docs/ARCHITECTURE.md" "docs/USAGE.md")
+          for file in "${major_docs[@]}"; do
+            if grep -q "## Table of Contents" "$file"; then
+              echo "✅ $file has Table of Contents" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "⚠️ $file missing Table of Contents" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+
+  spell-check:
+    name: Spell Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Spell check documentation
+        uses: crate-ci/typos@master
+        with:
+          files: ./docs/ ./README.md ./CONTRIBUTING.md
+
+  generate-docs:
+    name: Generate Documentation
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25.x'
+          cache: true
+
+      - name: Install godoc
+        run: go install golang.org/x/tools/cmd/godoc@latest
+
+      - name: Generate API documentation
+        run: |
+          mkdir -p generated-docs
+          
+          # Generate package documentation
+          packages=(
+            "core"
+            "group" 
+            "supervisor"
+            "workergroup"
+            "backoff"
+            "patterns/bulkhead"
+            "patterns/circuitbreaker"
+            "patterns/fanoutin"
+            "patterns/mapreduce"
+            "patterns/pipeline"
+            "patterns/ratelimiter"
+            "patterns/retry"
+            "patterns/scattergather"
+            "patterns/throttler"
+            "patterns/timeout"
+            "patterns/workerpercore"
+            "adapters/logger"
+            "adapters/metrics"
+          )
+          
+          for pkg in "${packages[@]}"; do
+            echo "Generating docs for $pkg"
+            godoc -html "./$pkg" > "generated-docs/${pkg//\//-}.html"
+          done
+
+      - name: Upload generated docs
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-documentation
+          path: generated-docs/
+          retention-days: 30

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/abhipray-cpu/concurx/discussions
+    about: Ask questions and discuss ideas with the community
+  - name: 📖 Documentation
+    url: https://github.com/abhipray-cpu/concurx/tree/main/docs
+    about: Browse the documentation for usage guides and examples
+  - name: 🔍 Search Issues
+    url: https://github.com/abhipray-cpu/concurx/issues
+    about: Search existing issues before creating a new one

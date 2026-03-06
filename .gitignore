@@ -1,0 +1,64 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Test coverage
+*.out
+coverage.html
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Go workspace
+go.work
+go.work.sum
+
+# Build output
+/bin/
+/dist/
+
+# Compiled example binaries (go build ./examples/...)
+/batch-http
+/email-worker
+/pipeline-image-process
+/supervised-stream
+
+# Profiling and performance
+*.prof
+*.pprof
+cpu.prof
+mem.prof
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# Development and debug binaries
+__debug_bin*
+debug
+
+# Test artifacts and reports
+*.log
+testdata/generated/
+
+# Docker and container artifacts (stress tests)
+stress/.env.local
+stress/data/
+stress/logs/
+
+# Internal review documents
+docs/REVIEW_REPORT.md
+

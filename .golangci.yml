@@ -1,0 +1,117 @@
+# golangci-lint configuration for concurx
+# https://golangci-lint.run/usage/configuration/
+
+version: "2"
+
+run:
+  timeout: 5m
+  tests: true
+  modules-download-mode: readonly
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+
+linters:
+  enable:
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - bodyclose
+    - durationcheck
+    - errname
+    - errorlint
+    - exhaustive
+    - goconst
+    - gocritic
+    - gosec
+    - misspell
+    - nilerr
+    - prealloc
+    - predeclared
+    - revive
+    - unconvert
+    - unparam
+    - wastedassign
+
+  settings:
+    errcheck:
+      check-type-assertions: true
+      check-blank: false
+
+    govet:
+      enable-all: true
+      disable:
+        - fieldalignment  # not a correctness issue
+
+    gocritic:
+      enabled-tags:
+        - diagnostic
+        - style
+        - performance
+      disabled-checks:
+        - hugeParam  # concurx passes options by value intentionally
+
+    revive:
+      rules:
+        - name: blank-imports
+        - name: context-as-argument
+        - name: error-return
+        - name: error-strings
+        - name: exported
+          arguments:
+            - disableStutteringCheck
+        - name: increment-decrement
+        - name: var-naming
+        - name: range
+        - name: receiver-naming
+        - name: time-naming
+        - name: unexported-return
+        - name: indent-error-flow
+
+    exhaustive:
+      default-signifies-exhaustive: true
+
+    misspell:
+      locale: US
+
+    goconst:
+      min-len: 3
+      min-occurrences: 3
+
+  exclusions:
+    rules:
+      # Allow unchecked errors in test files
+      - path: _test\.go
+        linters:
+          - errcheck
+          - errorlint
+          - gosec
+          - gocritic
+          - unparam
+          - predeclared
+          - prealloc
+          - govet
+
+      # Allow dot imports in test files
+      - path: _test\.go
+        text: "dot-imports"
+
+      # Examples may have simplified error handling
+      - path: examples/
+        linters:
+          - errcheck
+          - gosec
+          - goconst
+          - prealloc
+          - unparam
+          - staticcheck
+
+      # Adapters wrap external libraries
+      - path: adapters/
+        linters:
+          - unparam
+

@@ -1,0 +1,143 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement for concurx
+title: "[Feature]: "
+labels: ["enhancement", "needs-discussion"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature! Please provide detailed information to help us understand and evaluate your request.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-flight Checklist
+      description: Please ensure you have completed the following
+      options:
+        - label: I have read the [Contributing Guidelines](../../CONTRIBUTING.md)
+          required: true
+        - label: I have searched existing issues to ensure this is not a duplicate
+          required: true
+        - label: I have reviewed the [Architecture Documentation](../../docs/ARCHITECTURE.md)
+          required: true
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What type of feature is this?
+      options:
+        - New concurrency primitive
+        - New concurrency pattern  
+        - Enhancement to existing primitive
+        - Enhancement to existing pattern
+        - New adapter
+        - Documentation improvement
+        - Performance improvement
+        - Developer experience improvement
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Description
+      description: What problem does this feature solve?
+      placeholder: |
+        I'm always frustrated when...
+        Currently, there's no way to...
+        It's difficult to...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your proposed solution
+      placeholder: |
+        I would like to see...
+        The feature should work like...
+        This could be implemented by...
+    validations:
+      required: true
+
+  - type: textarea
+    id: api-design
+    attributes:
+      label: API Design (if applicable)
+      description: If this involves new APIs, provide a proposed interface
+      render: go
+      placeholder: |
+        // Example API design
+        type NewPrimitive struct {
+            // fields
+        }
+        
+        func (p *NewPrimitive) NewMethod(ctx context.Context) error {
+            // implementation
+        }
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases
+      description: Provide specific use cases where this feature would be valuable
+      placeholder: |
+        1. Use case 1: Description...
+        2. Use case 2: Description...
+        3. Use case 3: Description...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What alternatives have you considered?
+      placeholder: |
+        Alternative 1: Description and why it's not suitable...
+        Alternative 2: Description and why it's not suitable...
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would be helpful
+        - High - Important for my use case
+        - Critical - Blocking my adoption
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: implementation
+    attributes:
+      label: Implementation
+      description: Are you willing to contribute to the implementation?
+      options:
+        - label: I am willing to submit a pull request for this feature
+        - label: I can help with testing and validation
+        - label: I can help with documentation
+        - label: I would like someone else to implement this
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context, examples, or references about the feature request
+
+  - type: checkboxes
+    id: compatibility
+    attributes:
+      label: Compatibility Considerations
+      description: Have you considered the compatibility impact?
+      options:
+        - label: This feature is backward compatible
+        - label: This feature requires breaking changes
+        - label: I'm not sure about compatibility impact

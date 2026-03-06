@@ -1,0 +1,34 @@
+# Global code owners - these users will be automatically requested for review on all PRs
+* @abhipray-cpu
+
+# Core library files
+/core/ @abhipray-cpu
+/group/ @abhipray-cpu
+/supervisor/ @abhipray-cpu
+/workergroup/ @abhipray-cpu
+
+# Concurrency patterns - require careful review for correctness
+/patterns/ @abhipray-cpu
+
+# Reusable utilities
+/backoff/ @abhipray-cpu
+
+# Adapters and integrations
+/adapters/ @abhipray-cpu
+
+# Documentation
+/docs/ @abhipray-cpu
+README.md @abhipray-cpu
+*.md @abhipray-cpu
+
+# Examples - ensure they stay current and functional
+/examples/ @abhipray-cpu
+
+# Build and CI configuration
+/.github/ @abhipray-cpu
+go.mod @abhipray-cpu
+go.sum @abhipray-cpu
+
+# Test files - ensure comprehensive coverage
+*_test.go @abhipray-cpu
+/testdata/ @abhipray-cpu

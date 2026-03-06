@@ -1,0 +1,34 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "concurx",
+    "workergroup",
+    "workerpercore",
+    "circuitbreaker",
+    "fanoutin",
+    "mapreduce",
+    "scattergather",
+    "ratelimiter",
+    "backpressure",
+    "bulkhead",
+    "gomod",
+    "golangci",
+    "govulncheck",
+    "gosec",
+    "securecodewarrior",
+    "softprops",
+    "abhipray",
+    "coverprofile",
+    "testdata",
+    "stdlib",
+    "Dockerized",
+    "Errorf",
+    "errorf"
+  ],
+  "ignorePaths": [
+    "vendor/**",
+    "stress/**",
+    "go.sum"
+  ]
+}

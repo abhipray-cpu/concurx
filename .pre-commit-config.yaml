@@ -1,0 +1,42 @@
+repos:
+  # YAML validation
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-toml
+      - id: detect-private-key
+      - id: mixed-line-ending
+
+  # Go formatting
+  - repo: https://github.com/golangci/golangci-lint
+    rev: v1.56.2
+    hooks:
+      - id: golangci-lint
+
+  # Go imports
+  - repo: https://github.com/pre-commit/mirrors-goimports
+    rev: v0.1.14
+    hooks:
+      - id: goimports
+        language_version: go1.25.1
+
+  # Go fmt
+  - repo: https://github.com/pre-commit/mirrors-gofmt
+    rev: v1.25.1
+    hooks:
+      - id: gofmt
+        language_version: go1.25.1
+
+  # General linting and security
+  - repo: https://github.com/hadialqattan/pycln
+    rev: v2.2.3
+    hooks:
+      - id: pycln
+        stages: [commit]

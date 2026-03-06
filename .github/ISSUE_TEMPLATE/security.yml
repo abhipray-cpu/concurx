@@ -1,0 +1,166 @@
+name: 🔒 Security Vulnerability Report
+description: Report a security vulnerability (PRIVATE - use only for actual security issues)
+title: "[SECURITY]: "
+labels: ["security", "triage-required"]
+assignees: ["abhipray-cpu"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **IMPORTANT**: This form is for reporting security vulnerabilities only.
+        
+        For non-security issues, please use other issue templates.
+        
+        If this is a critical security issue, consider emailing security@concurx.dev instead.
+
+  - type: checkboxes
+    id: security-checklist
+    attributes:
+      label: Security Checklist
+      options:
+        - label: This is a genuine security vulnerability (not a general bug)
+          required: true
+        - label: I have not disclosed this vulnerability publicly
+          required: true
+        - label: I have tested this on the latest version of concurx
+          required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity Level
+      description: How severe do you consider this vulnerability?
+      options:
+        - Critical (Remote code execution, data breach)
+        - High (Privilege escalation, significant data exposure)
+        - Medium (Limited data exposure, DoS attacks)
+        - Low (Information disclosure, minor security issues)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: vulnerability-type
+    attributes:
+      label: Vulnerability Type
+      description: What type of vulnerability is this?
+      options:
+        - Memory corruption/overflow
+        - Race condition leading to security issue
+        - Resource exhaustion/DoS
+        - Information disclosure
+        - Privilege escalation
+        - Injection vulnerability
+        - Authentication/Authorization bypass
+        - Cryptographic weakness
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Vulnerability Description
+      description: Provide a clear description of the security vulnerability
+      placeholder: |
+        Describe the security vulnerability in detail:
+        - What component is affected?
+        - What kind of security issue is it?
+        - What could an attacker potentially do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Security Impact
+      description: Describe the potential security impact
+      placeholder: |
+        - What data could be exposed?
+        - What system access could be gained?
+        - What operations could be compromised?
+        - Who would be affected?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Provide detailed steps to reproduce the vulnerability
+      placeholder: |
+        1. Set up environment...
+        2. Run the following code...
+        3. Observe the security issue...
+      render: go
+    validations:
+      required: true
+
+  - type: textarea
+    id: poc
+    attributes:
+      label: Proof of Concept
+      description: Provide a minimal proof of concept (if safe to share)
+      placeholder: |
+        // Minimal example demonstrating the vulnerability
+        // Remove any sensitive or dangerous payloads
+        package main
+        
+        import "github.com/abhipray-cpu/concurx/group"
+        
+        func main() {
+            // Your proof of concept here
+        }
+      render: go
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Details
+      description: Your environment information
+      placeholder: |
+        - Go version:
+        - Concurx version:
+        - Operating System:
+        - Architecture:
+        - Additional environment details:
+    validations:
+      required: true
+
+  - type: textarea
+    id: mitigation
+    attributes:
+      label: Suggested Mitigation
+      description: If you have suggestions for fixing this vulnerability
+      placeholder: |
+        Describe potential ways to fix or mitigate this vulnerability...
+
+  - type: input
+    id: timeline
+    attributes:
+      label: Disclosure Timeline
+      description: Do you have any timeline requirements for disclosure?
+      placeholder: "e.g., 90 days, coordinated disclosure, etc."
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Any other relevant information
+      placeholder: |
+        - Related CVEs or security advisories
+        - Attack vectors
+        - Affected configurations
+        - Any other relevant details
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Next Steps:**
+        1. We will acknowledge receipt within 48 hours
+        2. We will investigate and validate the issue
+        3. We will work on a fix and coordinate disclosure
+        4. We will provide credit for responsible disclosure (if desired)
+        
+        Thank you for helping keep concurx secure! 🔒
