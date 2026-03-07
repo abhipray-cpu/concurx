@@ -67,7 +67,7 @@ func New(opts ...Option) ErrGroup {
 	if parentCtx == nil {
 		parentCtx = context.Background()
 	}
-	ctx, cancel := context.WithCancel(parentCtx)
+	ctx, cancel := context.WithCancel(parentCtx) //nolint:gosec // G118 false positive: cancel is stored in groupImpl.cancel and called in Wait() and Stop()
 
 	g := &groupImpl{
 		cfg:     cfg,

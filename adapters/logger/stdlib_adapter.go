@@ -73,7 +73,7 @@ func (l *StdLoggerAdapter) log(level, msg string, fields ...core.Field) {
 			}
 			b.WriteString(f.Key)
 			b.WriteString("=")
-			b.WriteString(fmt.Sprint(f.Val))
+			fmt.Fprint(&b, f.Val)
 		}
 	}
 
