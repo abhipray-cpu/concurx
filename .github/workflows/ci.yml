@@ -199,7 +199,7 @@ jobs:
         run: go mod download
 
       - name: Run benchmarks
-        run: go test -bench=. -benchmem -run=^$ $(go list ./... | grep -v '/examples/' | grep -v '/stress/') -timeout=10m > benchmark.txt
+        run: go test -bench=. -benchmem -benchtime=300ms -run=^$ $(go list ./... | grep -v '/examples/' | grep -v '/stress/') -timeout=10m > benchmark.txt
 
       - name: Store benchmark result (main branch only)
         if: github.ref == 'refs/heads/main'
