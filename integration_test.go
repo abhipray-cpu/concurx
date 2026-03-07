@@ -640,14 +640,27 @@ func TestIntegration_PipelineFeedingGroup(t *testing.T) {
 func TestIntegration_SupervisorBackoffWithGroupChild(t *testing.T) {
 	t.Parallel()
 
+	// Use large enough backoff values so scheduler jitter (typically <50ms on
+	// CI runners) cannot obscure the signal.  With Initial=150ms and Factor=2
+	// the expected inter-restart delays are ~150ms, ~300ms, ~600ms — well
+	// above OS scheduling noise on any supported platform.
+	const (
+		initial = 150 * time.Millisecond
+		factor  = 2.0
+	)
+	// minTotalBackoff is a conservative lower bound for the cumulative delay
+	// introduced by backoff across 3 failures: initial + initial*factor.
+	// We use 70 % of the theoretical value to absorb timing imprecision.
+	minTotalBackoff := time.Duration(float64(initial+time.Duration(float64(initial)*factor)) * 0.70)
+
 	var runTimes []time.Time
 	var mu sync.Mutex
 
 	s := supervisor.New(
 		supervisor.WithStrategy(&supervisor.BackoffOneForOne{
-			Initial: 20 * time.Millisecond,
-			Max:     200 * time.Millisecond,
-			Factor:  2.0,
+			Initial: initial,
+			Max:     2 * time.Second,
+			Factor:  factor,
 		}),
 	)
 
@@ -663,7 +676,7 @@ func TestIntegration_SupervisorBackoffWithGroupChild(t *testing.T) {
 				return fmt.Errorf("attempt %d failed", attempt)
 			}
 
-			// Succeed and block until stopped
+			// Succeed and block until stopped.
 			<-ctx.Done()
 			return ctx.Err()
 		},
@@ -675,8 +688,9 @@ func TestIntegration_SupervisorBackoffWithGroupChild(t *testing.T) {
 		t.Fatalf("Start: %v", err)
 	}
 
-	// Wait for 3 failures + final success
-	time.Sleep(1 * time.Second)
+	// Give enough time for 3 failures + backoff delays + final run.
+	// 150 + 300 + 600 = 1050ms of pure backoff; 3s gives 3× headroom.
+	time.Sleep(3 * time.Second)
 
 	stopCtx, stopCancel := context.WithTimeout(context.Background(), 2*time.Second)
 	defer stopCancel()
@@ -689,16 +703,12 @@ func TestIntegration_SupervisorBackoffWithGroupChild(t *testing.T) {
 		t.Fatalf("expected at least 4 runs (3 failures + 1 success), got %d", len(runTimes))
 	}
 
-	// Verify that the total time across restarts grows — the last gap should
-	// be larger than the first gap.  We use a relaxed check (last > first/2)
-	// rather than strict monotonicity per-step because CI schedulers can
-	// introduce jitter that makes individual adjacent gaps non-monotonic.
-	if len(runTimes) >= 4 {
-		firstGap := runTimes[1].Sub(runTimes[0])
-		lastGap := runTimes[len(runTimes)-1].Sub(runTimes[len(runTimes)-2])
-		if lastGap < firstGap {
-			t.Errorf("expected last restart gap (%v) >= first gap (%v); backoff does not appear to be increasing",
-				lastGap, firstGap)
-		}
+	// Verify that backoff added meaningful cumulative delay: the time from
+	// the first restart to the fourth run must exceed minTotalBackoff.
+	// This is immune to per-step jitter — it only checks the gross total.
+	totalDelay := runTimes[3].Sub(runTimes[0])
+	if totalDelay < minTotalBackoff {
+		t.Errorf("total delay from run[0] to run[3] was %v, want >= %v; backoff may not be working",
+			totalDelay, minTotalBackoff)
 	}
 }

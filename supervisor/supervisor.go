@@ -65,6 +65,12 @@ type Supervisor struct {
 	metrics core.Metrics
 	hooks   Hooks
 
+	// restartCh holds a per-child unbuffered channel on which the event
+	// loop signals that the child may restart.  The child goroutine blocks
+	// here after each failure so that backoff delays computed by the
+	// strategy are actually honoured before the next run.
+	restartCh map[string]chan struct{}
+
 	// random source for backoff jitter
 	rng *rand.Rand
 }
@@ -78,14 +84,15 @@ func New(opts ...Option) *Supervisor {
 	}
 
 	return &Supervisor{
-		opts:     o,
-		children: make(map[string]ChildSpec),
-		info:     make(map[string]*ChildInfo),
-		failCh:   make(chan FailureEvent, 128),
-		logger:   safeLogger(o.logger),
-		metrics:  safeMetrics(o.metrics),
-		hooks:    o.hooks.Safe(),
-		rng:      rand.New(rand.NewSource(time.Now().UnixNano())), //nolint:gosec // backoff jitter does not need crypto-strength randomness
+		opts:      o,
+		children:  make(map[string]ChildSpec),
+		info:      make(map[string]*ChildInfo),
+		failCh:    make(chan FailureEvent, 128),
+		restartCh: make(map[string]chan struct{}),
+		logger:    safeLogger(o.logger),
+		metrics:   safeMetrics(o.metrics),
+		hooks:     o.hooks.Safe(),
+		rng:       rand.New(rand.NewSource(time.Now().UnixNano())), //nolint:gosec // backoff jitter does not need crypto-strength randomness
 	}
 }
 
@@ -123,6 +130,7 @@ func (s *Supervisor) Add(spec ChildSpec) error {
 
 	s.children[spec.ID] = spec
 	s.info[spec.ID] = &ChildInfo{ID: spec.ID}
+	s.restartCh[spec.ID] = make(chan struct{}, 1)
 	return nil
 }
 
@@ -276,7 +284,8 @@ func (s *Supervisor) runChildOnce(spec ChildSpec) {
 			return
 		}
 
-		// notify failure handler
+		// notify failure handler and then block until it grants permission
+		// to restart (after applying any backoff delay).
 		select {
 		case s.failCh <- FailureEvent{
 			ChildID: id,
@@ -287,9 +296,15 @@ func (s *Supervisor) runChildOnce(spec ChildSpec) {
 			return
 		}
 
-		// small delay to avoid tight crash loops
+		// Block until the event loop signals that we may restart.
+		// This is where backoff delays are actually enforced: handleFailure
+		// sleeps for the computed delay, then sends on restartCh[id].
+		s.mu.Lock()
+		ch := s.restartCh[id]
+		s.mu.Unlock()
+
 		select {
-		case <-time.After(10 * time.Millisecond):
+		case <-ch:
 		case <-s.ctx.Done():
 			return
 		}
@@ -354,10 +369,23 @@ func (s *Supervisor) handleFailure(ev FailureEvent) {
 		})
 		s.hooks.OnChildRestart(ev.ChildID, restarts, ev.Err)
 
+		// Apply backoff delay, then signal the child goroutine to restart.
 		if delay > 0 {
 			select {
 			case <-time.After(delay):
 			case <-s.ctx.Done():
+				return
+			}
+		}
+
+		// Grant permission to restart.
+		s.mu.Lock()
+		ch, ok := s.restartCh[ev.ChildID]
+		s.mu.Unlock()
+		if ok {
+			select {
+			case ch <- struct{}{}:
+			default:
 			}
 		}
 
@@ -388,9 +416,10 @@ func (s *Supervisor) handleFailure(ev FailureEvent) {
 		// derived from the original parent context.
 		s.ctx, s.cancel = context.WithCancel(s.parentCtx)
 
-		// Reset child info for all children.
+		// Reset child info and restart channels for all children.
 		for _, spec := range specs {
 			s.info[spec.ID] = &ChildInfo{ID: spec.ID}
+			s.restartCh[spec.ID] = make(chan struct{}, 1)
 		}
 		s.wg = sync.WaitGroup{}
 		s.mu.Unlock()
@@ -503,6 +532,7 @@ func (s *Supervisor) AddAndStart(spec ChildSpec) error {
 
 	s.children[spec.ID] = spec
 	s.info[spec.ID] = &ChildInfo{ID: spec.ID}
+	s.restartCh[spec.ID] = make(chan struct{}, 1)
 	s.mu.Unlock()
 
 	s.launchChild(spec)
