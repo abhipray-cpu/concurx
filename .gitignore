@@ -34,6 +34,10 @@ go.work.sum
 /email-worker
 /pipeline-image-process
 /supervised-stream
+examples/batch-http/batch-http
+examples/email-worker/email-worker
+examples/pipeline-image-process/pipeline-image-process
+examples/supervised-stream/supervised-stream
 
 # Profiling and performance
 *.prof

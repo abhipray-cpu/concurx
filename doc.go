@@ -1,4 +1,3 @@
-package concurx
 // Package concurx provides production-grade concurrency primitives and
 // patterns for Go.
 //
