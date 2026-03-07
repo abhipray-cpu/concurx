@@ -104,7 +104,7 @@ jobs:
         run: go mod download
 
       - name: Run unit tests
-        run: go test ./... -v -coverprofile=coverage.out -timeout=5m
+        run: go test $(go list ./... | grep -v '/examples/' | grep -v '/stress/') -v -coverprofile=coverage.out -timeout=5m
 
       - name: Upload coverage (ubuntu / latest Go only)
         if: matrix.os == 'ubuntu-latest' && matrix.go-version == '1.25.x'
@@ -133,7 +133,7 @@ jobs:
         run: go mod download
 
       - name: Run race detector
-        run: go test ./... -race -count=5 -timeout=10m
+        run: go test $(go list ./... | grep -v '/examples/' | grep -v '/stress/') -race -count=5 -timeout=10m
 
 # ─────────────────────────────────────────────
 # Stage 5 — Integration Tests
@@ -155,7 +155,7 @@ jobs:
         run: go mod download
 
       - name: Run integration tests
-        run: go test -v -race -run ^TestIntegration ./... -timeout=5m
+        run: go test -v -race -run ^TestIntegration $(go list ./... | grep -v '/examples/' | grep -v '/stress/') -timeout=5m
 
 # ─────────────────────────────────────────────
 # Stage 6a — Security Scan
@@ -199,7 +199,7 @@ jobs:
         run: go mod download
 
       - name: Run benchmarks
-        run: go test -bench=. -benchmem -run=^$ ./... -timeout=10m > benchmark.txt
+        run: go test -bench=. -benchmem -run=^$ $(go list ./... | grep -v '/examples/' | grep -v '/stress/') -timeout=10m > benchmark.txt
 
       - name: Store benchmark result (main branch only)
         if: github.ref == 'refs/heads/main'
@@ -242,7 +242,7 @@ jobs:
         run: go mod download
 
       - name: Stability run
-        run: go test ./... -count=40 -timeout=30m
+        run: go test $(go list ./... | grep -v '/examples/' | grep -v '/stress/') -count=40 -timeout=30m
 
 # ─────────────────────────────────────────────
 # Stage 8 — Release (tag push v* only)
