@@ -1,6 +1,6 @@
 module github.com/abhipray-cpu/concurx
 
-go 1.25.1
+go 1.25.8
 
 require (
 	github.com/prometheus/client_golang v1.23.2
