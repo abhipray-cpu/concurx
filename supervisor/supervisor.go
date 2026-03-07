@@ -68,7 +68,7 @@ type Supervisor struct {
 	// restartCh holds a per-child unbuffered channel on which the event
 	// loop signals that the child may restart.  The child goroutine blocks
 	// here after each failure so that backoff delays computed by the
-	// strategy are actually honoured before the next run.
+	// strategy are actually honored before the next run.
 	restartCh map[string]chan struct{}
 
 	// random source for backoff jitter
