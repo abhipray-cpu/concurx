@@ -187,6 +187,8 @@ jobs:
     name: "Stage 6b · Benchmarks"
     needs: integration
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # required to push benchmark results to gh-pages
     steps:
       - uses: actions/checkout@v4
 
