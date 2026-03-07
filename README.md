@@ -442,7 +442,7 @@ go test -bench=. -benchmem ./group/...
 go test -bench=. -benchmem ./patterns/bulkhead/...
 ```
 
-Results are tracked in GitHub Actions. See [`.github/workflows/benchmark.yml`](./.github/workflows/benchmark.yml).
+Results are tracked in GitHub Actions. See the **Stage 6b · Benchmarks** job in [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
 
 ---
 
