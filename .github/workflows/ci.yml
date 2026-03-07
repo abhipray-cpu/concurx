@@ -198,8 +198,27 @@ jobs:
       - name: Download dependencies
         run: go mod download
 
+      - name: Pre-build test binaries (warm cache)
+        run: go test -run=^$ -count=0 ./group/... ./patterns/... ./supervisor/... ./workergroup/...
+
       - name: Run benchmarks
-        run: go test -bench=. -benchmem -benchtime=300ms -run=^$ $(go list ./... | grep -v '/examples/' | grep -v '/stress/') -timeout=10m > benchmark.txt
+        run: |
+          BENCH_PKGS=$(go list \
+            ./group/... \
+            ./patterns/bulkhead/... \
+            ./patterns/circuitbreaker/... \
+            ./patterns/fanoutin/... \
+            ./patterns/mapreduce/... \
+            ./patterns/pipeline/... \
+            ./patterns/ratelimiter/... \
+            ./patterns/retry/... \
+            ./patterns/scattergather/... \
+            ./patterns/throttler/... \
+            ./patterns/timeout/... \
+            ./patterns/workerpercore/... \
+            ./supervisor/... \
+            ./workergroup/...)
+          go test -bench=. -benchmem -benchtime=300ms -run=^$ -timeout=10m $BENCH_PKGS > benchmark.txt
 
       - name: Store benchmark result (main branch only)
         if: github.ref == 'refs/heads/main'
