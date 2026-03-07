@@ -9,7 +9,7 @@
   
   [![Go Version](https://img.shields.io/badge/go-1.25+-blue)](https://golang.org/doc/devel/release)
   [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-  [![CI/CD](https://github.com/abhipray-cpu/concurx/actions/workflows/ci.yml/badge.svg)](https://github.com/abhipray-cpu/concurx/actions)
+  [![CI/CD](https://github.com/abhipray-cpu/Concurrx/actions/workflows/ci.yml/badge.svg)](https://github.com/abhipray-cpu/Concurrx/actions)
   
 </div>
 
