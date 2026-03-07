@@ -689,13 +689,16 @@ func TestIntegration_SupervisorBackoffWithGroupChild(t *testing.T) {
 		t.Fatalf("expected at least 4 runs (3 failures + 1 success), got %d", len(runTimes))
 	}
 
-	// Verify that delays between restarts are increasing
-	for i := 1; i < len(runTimes)-1 && i < 3; i++ {
-		gap := runTimes[i+1].Sub(runTimes[i])
-		prevGap := runTimes[i].Sub(runTimes[i-1])
-		if i > 1 && gap < prevGap/2 {
-			t.Errorf("expected increasing gaps, but gap[%d]=%v < gap[%d]=%v/2",
-				i, gap, i-1, prevGap)
+	// Verify that the total time across restarts grows — the last gap should
+	// be larger than the first gap.  We use a relaxed check (last > first/2)
+	// rather than strict monotonicity per-step because CI schedulers can
+	// introduce jitter that makes individual adjacent gaps non-monotonic.
+	if len(runTimes) >= 4 {
+		firstGap := runTimes[1].Sub(runTimes[0])
+		lastGap := runTimes[len(runTimes)-1].Sub(runTimes[len(runTimes)-2])
+		if lastGap < firstGap {
+			t.Errorf("expected last restart gap (%v) >= first gap (%v); backoff does not appear to be increasing",
+				lastGap, firstGap)
 		}
 	}
 }

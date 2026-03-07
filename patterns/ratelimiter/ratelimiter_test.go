@@ -15,8 +15,10 @@ import (
 // -----------------------------------------------------------------------------
 
 func TestRateLimiter_TokenBucket_AllowsWithinBurst(t *testing.T) {
+	// burst=2: two tokens available immediately; refill rate is irrelevant
+	// for this test since we only consume within the initial burst.
 	rl, err := New(
-		WithPolicy(NewTokenBucket(1, 2)),
+		WithPolicy(NewTokenBucket(2, time.Second)),
 		WithFailFast(),
 	)
 	if err != nil {
