@@ -22,7 +22,7 @@ on:
     tags:
       - 'v*'
   schedule:
-    - cron: '0 2 * * *'   # nightly, to catch dependency drift
+    - cron: '0 2 * * 1'   # nightly, to catch dependency drift
   workflow_dispatch:        # allow manual trigger from GitHub UI
 
 env:
