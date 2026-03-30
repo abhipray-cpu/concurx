@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Clean up stale issues and PRs
     steps:
-      - uses: actions/stale@v9
+      - uses: actions/stale@v10
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           
