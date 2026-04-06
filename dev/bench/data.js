@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1774840424891,
+  "lastUpdate": 1775445097649,
   "repoUrl": "https://github.com/abhipray-cpu/concurx",
   "entries": {
     "Benchmark": [
@@ -14618,6 +14618,1834 @@ window.BENCHMARK_DATA = {
             "value": 0,
             "unit": "allocs/op",
             "extra": "36809703 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Abhipray Dumka",
+            "username": "abhipray-cpu",
+            "email": "dumkaabhipray@gmail.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "2461609b1d892c8cd8ef13e19f7509c8d12dd337",
+          "message": "Update cron schedule for stale issue management (#10)",
+          "timestamp": "2026-03-30T14:31:25Z",
+          "url": "https://github.com/abhipray-cpu/concurx/commit/2461609b1d892c8cd8ef13e19f7509c8d12dd337"
+        },
+        "date": 1775445097295,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkGo_NoSemaphore_ShortTasks (github.com/abhipray-cpu/concurx/group)",
+            "value": 1580,
+            "unit": "ns/op\t     720 B/op\t      10 allocs/op",
+            "extra": "221883 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkGo_NoSemaphore_ShortTasks (github.com/abhipray-cpu/concurx/group) - ns/op",
+            "value": 1580,
+            "unit": "ns/op",
+            "extra": "221883 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkGo_NoSemaphore_ShortTasks (github.com/abhipray-cpu/concurx/group) - B/op",
+            "value": 720,
+            "unit": "B/op",
+            "extra": "221883 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkGo_NoSemaphore_ShortTasks (github.com/abhipray-cpu/concurx/group) - allocs/op",
+            "value": 10,
+            "unit": "allocs/op",
+            "extra": "221883 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkGo_WithSemaphore_ShortTasks (github.com/abhipray-cpu/concurx/group)",
+            "value": 3520,
+            "unit": "ns/op\t    1176 B/op\t      25 allocs/op",
+            "extra": "97945 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkGo_WithSemaphore_ShortTasks (github.com/abhipray-cpu/concurx/group) - ns/op",
+            "value": 3520,
+            "unit": "ns/op",
+            "extra": "97945 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkGo_WithSemaphore_ShortTasks (github.com/abhipray-cpu/concurx/group) - B/op",
+            "value": 1176,
+            "unit": "B/op",
+            "extra": "97945 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkGo_WithSemaphore_ShortTasks (github.com/abhipray-cpu/concurx/group) - allocs/op",
+            "value": 25,
+            "unit": "allocs/op",
+            "extra": "97945 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkGo_WithSemaphore_LongTasks (github.com/abhipray-cpu/concurx/group)",
+            "value": 1087201,
+            "unit": "ns/op\t    2160 B/op\t      36 allocs/op",
+            "extra": "331 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkGo_WithSemaphore_LongTasks (github.com/abhipray-cpu/concurx/group) - ns/op",
+            "value": 1087201,
+            "unit": "ns/op",
+            "extra": "331 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkGo_WithSemaphore_LongTasks (github.com/abhipray-cpu/concurx/group) - B/op",
+            "value": 2160,
+            "unit": "B/op",
+            "extra": "331 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkGo_WithSemaphore_LongTasks (github.com/abhipray-cpu/concurx/group) - allocs/op",
+            "value": 36,
+            "unit": "allocs/op",
+            "extra": "331 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTryGo_NoSemaphore (github.com/abhipray-cpu/concurx/group)",
+            "value": 1594,
+            "unit": "ns/op\t     728 B/op\t      10 allocs/op",
+            "extra": "204258 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTryGo_NoSemaphore (github.com/abhipray-cpu/concurx/group) - ns/op",
+            "value": 1594,
+            "unit": "ns/op",
+            "extra": "204258 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTryGo_NoSemaphore (github.com/abhipray-cpu/concurx/group) - B/op",
+            "value": 728,
+            "unit": "B/op",
+            "extra": "204258 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTryGo_NoSemaphore (github.com/abhipray-cpu/concurx/group) - allocs/op",
+            "value": 10,
+            "unit": "allocs/op",
+            "extra": "204258 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTryGo_WithContention (github.com/abhipray-cpu/concurx/group)",
+            "value": 1122506,
+            "unit": "ns/op\t    6291 B/op\t     222 allocs/op",
+            "extra": "327 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTryGo_WithContention (github.com/abhipray-cpu/concurx/group) - ns/op",
+            "value": 1122506,
+            "unit": "ns/op",
+            "extra": "327 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTryGo_WithContention (github.com/abhipray-cpu/concurx/group) - B/op",
+            "value": 6291,
+            "unit": "B/op",
+            "extra": "327 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTryGo_WithContention (github.com/abhipray-cpu/concurx/group) - allocs/op",
+            "value": 222,
+            "unit": "allocs/op",
+            "extra": "327 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBlockingGo_AcquireLatency (github.com/abhipray-cpu/concurx/group)",
+            "value": 1095231,
+            "unit": "ns/op\t    2640 B/op\t      54 allocs/op",
+            "extra": "322 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBlockingGo_AcquireLatency (github.com/abhipray-cpu/concurx/group) - ns/op",
+            "value": 1095231,
+            "unit": "ns/op",
+            "extra": "322 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBlockingGo_AcquireLatency (github.com/abhipray-cpu/concurx/group) - B/op",
+            "value": 2640,
+            "unit": "B/op",
+            "extra": "322 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBlockingGo_AcquireLatency (github.com/abhipray-cpu/concurx/group) - allocs/op",
+            "value": 54,
+            "unit": "allocs/op",
+            "extra": "322 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWait_Overhead (github.com/abhipray-cpu/concurx/group)",
+            "value": 36375,
+            "unit": "ns/op\t   15114 B/op\t     470 allocs/op",
+            "extra": "9062 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWait_Overhead (github.com/abhipray-cpu/concurx/group) - ns/op",
+            "value": 36375,
+            "unit": "ns/op",
+            "extra": "9062 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWait_Overhead (github.com/abhipray-cpu/concurx/group) - B/op",
+            "value": 15114,
+            "unit": "B/op",
+            "extra": "9062 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWait_Overhead (github.com/abhipray-cpu/concurx/group) - allocs/op",
+            "value": 470,
+            "unit": "allocs/op",
+            "extra": "9062 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_NoContention (github.com/abhipray-cpu/concurx/patterns/bulkhead)",
+            "value": 270.7,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "1332088 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_NoContention (github.com/abhipray-cpu/concurx/patterns/bulkhead) - ns/op",
+            "value": 270.7,
+            "unit": "ns/op",
+            "extra": "1332088 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_NoContention (github.com/abhipray-cpu/concurx/patterns/bulkhead) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "1332088 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_NoContention (github.com/abhipray-cpu/concurx/patterns/bulkhead) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "1332088 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_Contention_FailFast (github.com/abhipray-cpu/concurx/patterns/bulkhead)",
+            "value": 268240,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "1398 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_Contention_FailFast (github.com/abhipray-cpu/concurx/patterns/bulkhead) - ns/op",
+            "value": 268240,
+            "unit": "ns/op",
+            "extra": "1398 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_Contention_FailFast (github.com/abhipray-cpu/concurx/patterns/bulkhead) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "1398 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_Contention_FailFast (github.com/abhipray-cpu/concurx/patterns/bulkhead) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "1398 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_Contention_WithQueue (github.com/abhipray-cpu/concurx/patterns/bulkhead)",
+            "value": 269214,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "1394 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_Contention_WithQueue (github.com/abhipray-cpu/concurx/patterns/bulkhead) - ns/op",
+            "value": 269214,
+            "unit": "ns/op",
+            "extra": "1394 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_Contention_WithQueue (github.com/abhipray-cpu/concurx/patterns/bulkhead) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "1394 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_Contention_WithQueue (github.com/abhipray-cpu/concurx/patterns/bulkhead) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "1394 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_WithTimeout (github.com/abhipray-cpu/concurx/patterns/bulkhead)",
+            "value": 5152037,
+            "unit": "ns/op\t     249 B/op\t       3 allocs/op",
+            "extra": "68 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_WithTimeout (github.com/abhipray-cpu/concurx/patterns/bulkhead) - ns/op",
+            "value": 5152037,
+            "unit": "ns/op",
+            "extra": "68 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_WithTimeout (github.com/abhipray-cpu/concurx/patterns/bulkhead) - B/op",
+            "value": 249,
+            "unit": "B/op",
+            "extra": "68 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Execute_WithTimeout (github.com/abhipray-cpu/concurx/patterns/bulkhead) - allocs/op",
+            "value": 3,
+            "unit": "allocs/op",
+            "extra": "68 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Saturation (github.com/abhipray-cpu/concurx/patterns/bulkhead)",
+            "value": 235.4,
+            "unit": "ns/op\t      32 B/op\t       1 allocs/op",
+            "extra": "1550059 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Saturation (github.com/abhipray-cpu/concurx/patterns/bulkhead) - ns/op",
+            "value": 235.4,
+            "unit": "ns/op",
+            "extra": "1550059 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Saturation (github.com/abhipray-cpu/concurx/patterns/bulkhead) - B/op",
+            "value": 32,
+            "unit": "B/op",
+            "extra": "1550059 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkBulkhead_Saturation (github.com/abhipray-cpu/concurx/patterns/bulkhead) - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "1550059 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_ClosedSuccess (github.com/abhipray-cpu/concurx/patterns/circuitbreaker)",
+            "value": 17.49,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "20294361 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_ClosedSuccess (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - ns/op",
+            "value": 17.49,
+            "unit": "ns/op",
+            "extra": "20294361 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_ClosedSuccess (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "20294361 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_ClosedSuccess (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "20294361 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_FailureBeforeOpen (github.com/abhipray-cpu/concurx/patterns/circuitbreaker)",
+            "value": 18.62,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "19152890 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_FailureBeforeOpen (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - ns/op",
+            "value": 18.62,
+            "unit": "ns/op",
+            "extra": "19152890 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_FailureBeforeOpen (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "19152890 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_FailureBeforeOpen (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "19152890 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_OpenFastFail (github.com/abhipray-cpu/concurx/patterns/circuitbreaker)",
+            "value": 39.02,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "9209301 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_OpenFastFail (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - ns/op",
+            "value": 39.02,
+            "unit": "ns/op",
+            "extra": "9209301 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_OpenFastFail (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "9209301 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_OpenFastFail (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "9209301 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_HalfOpenRecovery (github.com/abhipray-cpu/concurx/patterns/circuitbreaker)",
+            "value": 17.66,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "20534347 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_HalfOpenRecovery (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - ns/op",
+            "value": 17.66,
+            "unit": "ns/op",
+            "extra": "20534347 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_HalfOpenRecovery (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "20534347 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_HalfOpenRecovery (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "20534347 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_Parallel (github.com/abhipray-cpu/concurx/patterns/circuitbreaker)",
+            "value": 64.14,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "5577590 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_Parallel (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - ns/op",
+            "value": 64.14,
+            "unit": "ns/op",
+            "extra": "5577590 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_Parallel (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "5577590 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkCircuitBreaker_Parallel (github.com/abhipray-cpu/concurx/patterns/circuitbreaker) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "5577590 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_CPU (github.com/abhipray-cpu/concurx/patterns/fanoutin)",
+            "value": 556103,
+            "unit": "ns/op\t   10212 B/op\t      23 allocs/op",
+            "extra": "639 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_CPU (github.com/abhipray-cpu/concurx/patterns/fanoutin) - ns/op",
+            "value": 556103,
+            "unit": "ns/op",
+            "extra": "639 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_CPU (github.com/abhipray-cpu/concurx/patterns/fanoutin) - B/op",
+            "value": 10212,
+            "unit": "B/op",
+            "extra": "639 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_CPU (github.com/abhipray-cpu/concurx/patterns/fanoutin) - allocs/op",
+            "value": 23,
+            "unit": "allocs/op",
+            "extra": "639 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_PreserveOrder/ordered (github.com/abhipray-cpu/concurx/patterns/fanoutin)",
+            "value": 469464,
+            "unit": "ns/op\t   10125 B/op\t      23 allocs/op",
+            "extra": "760 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_PreserveOrder/ordered (github.com/abhipray-cpu/concurx/patterns/fanoutin) - ns/op",
+            "value": 469464,
+            "unit": "ns/op",
+            "extra": "760 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_PreserveOrder/ordered (github.com/abhipray-cpu/concurx/patterns/fanoutin) - B/op",
+            "value": 10125,
+            "unit": "B/op",
+            "extra": "760 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_PreserveOrder/ordered (github.com/abhipray-cpu/concurx/patterns/fanoutin) - allocs/op",
+            "value": 23,
+            "unit": "allocs/op",
+            "extra": "760 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_PreserveOrder/unordered (github.com/abhipray-cpu/concurx/patterns/fanoutin)",
+            "value": 469010,
+            "unit": "ns/op\t   10129 B/op\t      23 allocs/op",
+            "extra": "766 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_PreserveOrder/unordered (github.com/abhipray-cpu/concurx/patterns/fanoutin) - ns/op",
+            "value": 469010,
+            "unit": "ns/op",
+            "extra": "766 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_PreserveOrder/unordered (github.com/abhipray-cpu/concurx/patterns/fanoutin) - B/op",
+            "value": 10129,
+            "unit": "B/op",
+            "extra": "766 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_PreserveOrder/unordered (github.com/abhipray-cpu/concurx/patterns/fanoutin) - allocs/op",
+            "value": 23,
+            "unit": "allocs/op",
+            "extra": "766 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_FailFast (github.com/abhipray-cpu/concurx/patterns/fanoutin)",
+            "value": 1008203,
+            "unit": "ns/op\t    4375 B/op\t      27 allocs/op",
+            "extra": "358 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_FailFast (github.com/abhipray-cpu/concurx/patterns/fanoutin) - ns/op",
+            "value": 1008203,
+            "unit": "ns/op",
+            "extra": "358 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_FailFast (github.com/abhipray-cpu/concurx/patterns/fanoutin) - B/op",
+            "value": 4375,
+            "unit": "B/op",
+            "extra": "358 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_FailFast (github.com/abhipray-cpu/concurx/patterns/fanoutin) - allocs/op",
+            "value": 27,
+            "unit": "allocs/op",
+            "extra": "358 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_Timeout (github.com/abhipray-cpu/concurx/patterns/fanoutin)",
+            "value": 2158418,
+            "unit": "ns/op\t    2877 B/op\t      25 allocs/op",
+            "extra": "168 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_Timeout (github.com/abhipray-cpu/concurx/patterns/fanoutin) - ns/op",
+            "value": 2158418,
+            "unit": "ns/op",
+            "extra": "168 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_Timeout (github.com/abhipray-cpu/concurx/patterns/fanoutin) - B/op",
+            "value": 2877,
+            "unit": "B/op",
+            "extra": "168 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkFanOut_Timeout (github.com/abhipray-cpu/concurx/patterns/fanoutin) - allocs/op",
+            "value": 25,
+            "unit": "allocs/op",
+            "extra": "168 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMapReduce_1k (github.com/abhipray-cpu/concurx/patterns/mapreduce)",
+            "value": 647656,
+            "unit": "ns/op\t    1283 B/op\t      18 allocs/op",
+            "extra": "552 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMapReduce_1k (github.com/abhipray-cpu/concurx/patterns/mapreduce) - ns/op",
+            "value": 647656,
+            "unit": "ns/op",
+            "extra": "552 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMapReduce_1k (github.com/abhipray-cpu/concurx/patterns/mapreduce) - B/op",
+            "value": 1283,
+            "unit": "B/op",
+            "extra": "552 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMapReduce_1k (github.com/abhipray-cpu/concurx/patterns/mapreduce) - allocs/op",
+            "value": 18,
+            "unit": "allocs/op",
+            "extra": "552 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMapReduce_10k (github.com/abhipray-cpu/concurx/patterns/mapreduce)",
+            "value": 7012912,
+            "unit": "ns/op\t    2113 B/op\t      28 allocs/op",
+            "extra": "50 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMapReduce_10k (github.com/abhipray-cpu/concurx/patterns/mapreduce) - ns/op",
+            "value": 7012912,
+            "unit": "ns/op",
+            "extra": "50 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMapReduce_10k (github.com/abhipray-cpu/concurx/patterns/mapreduce) - B/op",
+            "value": 2113,
+            "unit": "B/op",
+            "extra": "50 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkMapReduce_10k (github.com/abhipray-cpu/concurx/patterns/mapreduce) - allocs/op",
+            "value": 28,
+            "unit": "allocs/op",
+            "extra": "50 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_SingleStage (github.com/abhipray-cpu/concurx/patterns/pipeline)",
+            "value": 1814583,
+            "unit": "ns/op\t  239590 B/op\t    4107 allocs/op",
+            "extra": "199 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_SingleStage (github.com/abhipray-cpu/concurx/patterns/pipeline) - ns/op",
+            "value": 1814583,
+            "unit": "ns/op",
+            "extra": "199 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_SingleStage (github.com/abhipray-cpu/concurx/patterns/pipeline) - B/op",
+            "value": 239590,
+            "unit": "B/op",
+            "extra": "199 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_SingleStage (github.com/abhipray-cpu/concurx/patterns/pipeline) - allocs/op",
+            "value": 4107,
+            "unit": "allocs/op",
+            "extra": "199 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_MultiStage (github.com/abhipray-cpu/concurx/patterns/pipeline)",
+            "value": 4579177,
+            "unit": "ns/op\t  698770 B/op\t   12303 allocs/op",
+            "extra": "84 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_MultiStage (github.com/abhipray-cpu/concurx/patterns/pipeline) - ns/op",
+            "value": 4579177,
+            "unit": "ns/op",
+            "extra": "84 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_MultiStage (github.com/abhipray-cpu/concurx/patterns/pipeline) - B/op",
+            "value": 698770,
+            "unit": "B/op",
+            "extra": "84 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_MultiStage (github.com/abhipray-cpu/concurx/patterns/pipeline) - allocs/op",
+            "value": 12303,
+            "unit": "allocs/op",
+            "extra": "84 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Backpressure (github.com/abhipray-cpu/concurx/patterns/pipeline)",
+            "value": 53788113,
+            "unit": "ns/op\t   85109 B/op\t    1291 allocs/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Backpressure (github.com/abhipray-cpu/concurx/patterns/pipeline) - ns/op",
+            "value": 53788113,
+            "unit": "ns/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Backpressure (github.com/abhipray-cpu/concurx/patterns/pipeline) - B/op",
+            "value": 85109,
+            "unit": "B/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Backpressure (github.com/abhipray-cpu/concurx/patterns/pipeline) - allocs/op",
+            "value": 1291,
+            "unit": "allocs/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_HighFanIn (github.com/abhipray-cpu/concurx/patterns/pipeline)",
+            "value": 17505680,
+            "unit": "ns/op\t 2323056 B/op\t   40012 allocs/op",
+            "extra": "19 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_HighFanIn (github.com/abhipray-cpu/concurx/patterns/pipeline) - ns/op",
+            "value": 17505680,
+            "unit": "ns/op",
+            "extra": "19 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_HighFanIn (github.com/abhipray-cpu/concurx/patterns/pipeline) - B/op",
+            "value": 2323056,
+            "unit": "B/op",
+            "extra": "19 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_HighFanIn (github.com/abhipray-cpu/concurx/patterns/pipeline) - allocs/op",
+            "value": 40012,
+            "unit": "allocs/op",
+            "extra": "19 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_FailFast (github.com/abhipray-cpu/concurx/patterns/pipeline)",
+            "value": 1808466,
+            "unit": "ns/op\t  239572 B/op\t    4107 allocs/op",
+            "extra": "199 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_FailFast (github.com/abhipray-cpu/concurx/patterns/pipeline) - ns/op",
+            "value": 1808466,
+            "unit": "ns/op",
+            "extra": "199 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_FailFast (github.com/abhipray-cpu/concurx/patterns/pipeline) - B/op",
+            "value": 239572,
+            "unit": "B/op",
+            "extra": "199 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_FailFast (github.com/abhipray-cpu/concurx/patterns/pipeline) - allocs/op",
+            "value": 4107,
+            "unit": "allocs/op",
+            "extra": "199 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Cancellation (github.com/abhipray-cpu/concurx/patterns/pipeline)",
+            "value": 6727,
+            "unit": "ns/op\t    2373 B/op\t      26 allocs/op",
+            "extra": "50149 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Cancellation (github.com/abhipray-cpu/concurx/patterns/pipeline) - ns/op",
+            "value": 6727,
+            "unit": "ns/op",
+            "extra": "50149 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Cancellation (github.com/abhipray-cpu/concurx/patterns/pipeline) - B/op",
+            "value": 2373,
+            "unit": "B/op",
+            "extra": "50149 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Cancellation (github.com/abhipray-cpu/concurx/patterns/pipeline) - allocs/op",
+            "value": 26,
+            "unit": "allocs/op",
+            "extra": "50149 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_PanicIsolation (github.com/abhipray-cpu/concurx/patterns/pipeline)",
+            "value": 3493,
+            "unit": "ns/op\t    1078 B/op\t      15 allocs/op",
+            "extra": "103653 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_PanicIsolation (github.com/abhipray-cpu/concurx/patterns/pipeline) - ns/op",
+            "value": 3493,
+            "unit": "ns/op",
+            "extra": "103653 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_PanicIsolation (github.com/abhipray-cpu/concurx/patterns/pipeline) - B/op",
+            "value": 1078,
+            "unit": "B/op",
+            "extra": "103653 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_PanicIsolation (github.com/abhipray-cpu/concurx/patterns/pipeline) - allocs/op",
+            "value": 15,
+            "unit": "allocs/op",
+            "extra": "103653 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Contention (github.com/abhipray-cpu/concurx/patterns/pipeline)",
+            "value": 1731758,
+            "unit": "ns/op\t  239568 B/op\t    4107 allocs/op",
+            "extra": "194 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Contention (github.com/abhipray-cpu/concurx/patterns/pipeline) - ns/op",
+            "value": 1731758,
+            "unit": "ns/op",
+            "extra": "194 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Contention (github.com/abhipray-cpu/concurx/patterns/pipeline) - B/op",
+            "value": 239568,
+            "unit": "B/op",
+            "extra": "194 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkPipeline_Contention (github.com/abhipray-cpu/concurx/patterns/pipeline) - allocs/op",
+            "value": 4107,
+            "unit": "allocs/op",
+            "extra": "194 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_TokenBucket_Allow (github.com/abhipray-cpu/concurx/patterns/ratelimiter)",
+            "value": 1013,
+            "unit": "ns/op\t       8 B/op\t       0 allocs/op",
+            "extra": "370333 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_TokenBucket_Allow (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - ns/op",
+            "value": 1013,
+            "unit": "ns/op",
+            "extra": "370333 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_TokenBucket_Allow (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - B/op",
+            "value": 8,
+            "unit": "B/op",
+            "extra": "370333 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_TokenBucket_Allow (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "370333 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_TokenBucket_Execute (github.com/abhipray-cpu/concurx/patterns/ratelimiter)",
+            "value": 1011,
+            "unit": "ns/op\t       9 B/op\t       0 allocs/op",
+            "extra": "362649 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_TokenBucket_Execute (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - ns/op",
+            "value": 1011,
+            "unit": "ns/op",
+            "extra": "362649 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_TokenBucket_Execute (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - B/op",
+            "value": 9,
+            "unit": "B/op",
+            "extra": "362649 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_TokenBucket_Execute (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "362649 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_SlidingWindow_FailFast (github.com/abhipray-cpu/concurx/patterns/ratelimiter)",
+            "value": 5469,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "68917 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_SlidingWindow_FailFast (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - ns/op",
+            "value": 5469,
+            "unit": "ns/op",
+            "extra": "68917 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_SlidingWindow_FailFast (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "68917 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_SlidingWindow_FailFast (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "68917 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_Timeout_Delay (github.com/abhipray-cpu/concurx/patterns/ratelimiter)",
+            "value": 10211725,
+            "unit": "ns/op\t     673 B/op\t       8 allocs/op",
+            "extra": "34 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_Timeout_Delay (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - ns/op",
+            "value": 10211725,
+            "unit": "ns/op",
+            "extra": "34 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_Timeout_Delay (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - B/op",
+            "value": 673,
+            "unit": "B/op",
+            "extra": "34 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRateLimiter_Timeout_Delay (github.com/abhipray-cpu/concurx/patterns/ratelimiter) - allocs/op",
+            "value": 8,
+            "unit": "allocs/op",
+            "extra": "34 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_Success_NoRetry (github.com/abhipray-cpu/concurx/patterns/retry)",
+            "value": 104.7,
+            "unit": "ns/op\t      64 B/op\t       1 allocs/op",
+            "extra": "3461959 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_Success_NoRetry (github.com/abhipray-cpu/concurx/patterns/retry) - ns/op",
+            "value": 104.7,
+            "unit": "ns/op",
+            "extra": "3461959 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_Success_NoRetry (github.com/abhipray-cpu/concurx/patterns/retry) - B/op",
+            "value": 64,
+            "unit": "B/op",
+            "extra": "3461959 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_Success_NoRetry (github.com/abhipray-cpu/concurx/patterns/retry) - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "3461959 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_SingleRetry (github.com/abhipray-cpu/concurx/patterns/retry)",
+            "value": 142.7,
+            "unit": "ns/op\t      80 B/op\t       2 allocs/op",
+            "extra": "2477294 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_SingleRetry (github.com/abhipray-cpu/concurx/patterns/retry) - ns/op",
+            "value": 142.7,
+            "unit": "ns/op",
+            "extra": "2477294 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_SingleRetry (github.com/abhipray-cpu/concurx/patterns/retry) - B/op",
+            "value": 80,
+            "unit": "B/op",
+            "extra": "2477294 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_SingleRetry (github.com/abhipray-cpu/concurx/patterns/retry) - allocs/op",
+            "value": 2,
+            "unit": "allocs/op",
+            "extra": "2477294 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_Exhausted (github.com/abhipray-cpu/concurx/patterns/retry)",
+            "value": 270.8,
+            "unit": "ns/op\t     144 B/op\t       6 allocs/op",
+            "extra": "1326764 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_Exhausted (github.com/abhipray-cpu/concurx/patterns/retry) - ns/op",
+            "value": 270.8,
+            "unit": "ns/op",
+            "extra": "1326764 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_Exhausted (github.com/abhipray-cpu/concurx/patterns/retry) - B/op",
+            "value": 144,
+            "unit": "B/op",
+            "extra": "1326764 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_Exhausted (github.com/abhipray-cpu/concurx/patterns/retry) - allocs/op",
+            "value": 6,
+            "unit": "allocs/op",
+            "extra": "1326764 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_WithBackoff (github.com/abhipray-cpu/concurx/patterns/retry)",
+            "value": 2154279,
+            "unit": "ns/op\t     608 B/op\t      10 allocs/op",
+            "extra": "166 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_WithBackoff (github.com/abhipray-cpu/concurx/patterns/retry) - ns/op",
+            "value": 2154279,
+            "unit": "ns/op",
+            "extra": "166 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_WithBackoff (github.com/abhipray-cpu/concurx/patterns/retry) - B/op",
+            "value": 608,
+            "unit": "B/op",
+            "extra": "166 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_WithBackoff (github.com/abhipray-cpu/concurx/patterns/retry) - allocs/op",
+            "value": 10,
+            "unit": "allocs/op",
+            "extra": "166 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_ContextCanceled (github.com/abhipray-cpu/concurx/patterns/retry)",
+            "value": 111,
+            "unit": "ns/op\t      64 B/op\t       1 allocs/op",
+            "extra": "3203322 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_ContextCanceled (github.com/abhipray-cpu/concurx/patterns/retry) - ns/op",
+            "value": 111,
+            "unit": "ns/op",
+            "extra": "3203322 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_ContextCanceled (github.com/abhipray-cpu/concurx/patterns/retry) - B/op",
+            "value": 64,
+            "unit": "B/op",
+            "extra": "3203322 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkRetry_ContextCanceled (github.com/abhipray-cpu/concurx/patterns/retry) - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "3203322 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_AllSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather)",
+            "value": 26189,
+            "unit": "ns/op\t    1522 B/op\t      22 allocs/op",
+            "extra": "14118 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_AllSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather) - ns/op",
+            "value": 26189,
+            "unit": "ns/op",
+            "extra": "14118 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_AllSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather) - B/op",
+            "value": 1522,
+            "unit": "B/op",
+            "extra": "14118 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_AllSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather) - allocs/op",
+            "value": 22,
+            "unit": "allocs/op",
+            "extra": "14118 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=1 (github.com/abhipray-cpu/concurx/patterns/scattergather)",
+            "value": 68760801,
+            "unit": "ns/op\t    1796 B/op\t      16 allocs/op",
+            "extra": "5 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=1 (github.com/abhipray-cpu/concurx/patterns/scattergather) - ns/op",
+            "value": 68760801,
+            "unit": "ns/op",
+            "extra": "5 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=1 (github.com/abhipray-cpu/concurx/patterns/scattergather) - B/op",
+            "value": 1796,
+            "unit": "B/op",
+            "extra": "5 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=1 (github.com/abhipray-cpu/concurx/patterns/scattergather) - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "5 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=2 (github.com/abhipray-cpu/concurx/patterns/scattergather)",
+            "value": 34365907,
+            "unit": "ns/op\t    1942 B/op\t      18 allocs/op",
+            "extra": "9 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=2 (github.com/abhipray-cpu/concurx/patterns/scattergather) - ns/op",
+            "value": 34365907,
+            "unit": "ns/op",
+            "extra": "9 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=2 (github.com/abhipray-cpu/concurx/patterns/scattergather) - B/op",
+            "value": 1942,
+            "unit": "B/op",
+            "extra": "9 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=2 (github.com/abhipray-cpu/concurx/patterns/scattergather) - allocs/op",
+            "value": 18,
+            "unit": "allocs/op",
+            "extra": "9 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=4 (github.com/abhipray-cpu/concurx/patterns/scattergather)",
+            "value": 17266632,
+            "unit": "ns/op\t    2230 B/op\t      22 allocs/op",
+            "extra": "20 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=4 (github.com/abhipray-cpu/concurx/patterns/scattergather) - ns/op",
+            "value": 17266632,
+            "unit": "ns/op",
+            "extra": "20 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=4 (github.com/abhipray-cpu/concurx/patterns/scattergather) - B/op",
+            "value": 2230,
+            "unit": "B/op",
+            "extra": "20 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=4 (github.com/abhipray-cpu/concurx/patterns/scattergather) - allocs/op",
+            "value": 22,
+            "unit": "allocs/op",
+            "extra": "20 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=8 (github.com/abhipray-cpu/concurx/patterns/scattergather)",
+            "value": 8696814,
+            "unit": "ns/op\t    2806 B/op\t      30 allocs/op",
+            "extra": "40 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=8 (github.com/abhipray-cpu/concurx/patterns/scattergather) - ns/op",
+            "value": 8696814,
+            "unit": "ns/op",
+            "extra": "40 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=8 (github.com/abhipray-cpu/concurx/patterns/scattergather) - B/op",
+            "value": 2806,
+            "unit": "B/op",
+            "extra": "40 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=8 (github.com/abhipray-cpu/concurx/patterns/scattergather) - allocs/op",
+            "value": 30,
+            "unit": "allocs/op",
+            "extra": "40 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=16 (github.com/abhipray-cpu/concurx/patterns/scattergather)",
+            "value": 4417116,
+            "unit": "ns/op\t    4066 B/op\t      47 allocs/op",
+            "extra": "80 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=16 (github.com/abhipray-cpu/concurx/patterns/scattergather) - ns/op",
+            "value": 4417116,
+            "unit": "ns/op",
+            "extra": "80 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=16 (github.com/abhipray-cpu/concurx/patterns/scattergather) - B/op",
+            "value": 4066,
+            "unit": "B/op",
+            "extra": "80 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_ConcurrencyScaling/concurrency=16 (github.com/abhipray-cpu/concurx/patterns/scattergather) - allocs/op",
+            "value": 47,
+            "unit": "allocs/op",
+            "extra": "80 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_FirstSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather)",
+            "value": 1105080,
+            "unit": "ns/op\t    1148 B/op\t      20 allocs/op",
+            "extra": "328 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_FirstSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather) - ns/op",
+            "value": 1105080,
+            "unit": "ns/op",
+            "extra": "328 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_FirstSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather) - B/op",
+            "value": 1148,
+            "unit": "B/op",
+            "extra": "328 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_FirstSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather) - allocs/op",
+            "value": 20,
+            "unit": "allocs/op",
+            "extra": "328 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_MinSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather)",
+            "value": 15144,
+            "unit": "ns/op\t    1233 B/op\t      20 allocs/op",
+            "extra": "23734 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_MinSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather) - ns/op",
+            "value": 15144,
+            "unit": "ns/op",
+            "extra": "23734 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_MinSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather) - B/op",
+            "value": 1233,
+            "unit": "B/op",
+            "extra": "23734 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScatterGather_MinSuccess (github.com/abhipray-cpu/concurx/patterns/scattergather) - allocs/op",
+            "value": 20,
+            "unit": "allocs/op",
+            "extra": "23734 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_AllowOnly (github.com/abhipray-cpu/concurx/patterns/throttler)",
+            "value": 149.1,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "2400933 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_AllowOnly (github.com/abhipray-cpu/concurx/patterns/throttler) - ns/op",
+            "value": 149.1,
+            "unit": "ns/op",
+            "extra": "2400933 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_AllowOnly (github.com/abhipray-cpu/concurx/patterns/throttler) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "2400933 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_AllowOnly (github.com/abhipray-cpu/concurx/patterns/throttler) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "2400933 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_Contention (github.com/abhipray-cpu/concurx/patterns/throttler)",
+            "value": 9942,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "47134 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_Contention (github.com/abhipray-cpu/concurx/patterns/throttler) - ns/op",
+            "value": 9942,
+            "unit": "ns/op",
+            "extra": "47134 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_Contention (github.com/abhipray-cpu/concurx/patterns/throttler) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "47134 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_Contention (github.com/abhipray-cpu/concurx/patterns/throttler) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "47134 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_RejectHeavy (github.com/abhipray-cpu/concurx/patterns/throttler)",
+            "value": 115.7,
+            "unit": "ns/op\t   3540680 rejected\t       0 B/op\t       0 allocs/op",
+            "extra": "3541080 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_RejectHeavy (github.com/abhipray-cpu/concurx/patterns/throttler) - ns/op",
+            "value": 115.7,
+            "unit": "ns/op",
+            "extra": "3541080 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_RejectHeavy (github.com/abhipray-cpu/concurx/patterns/throttler) - rejected",
+            "value": 3540680,
+            "unit": "rejected",
+            "extra": "3541080 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_RejectHeavy (github.com/abhipray-cpu/concurx/patterns/throttler) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "3541080 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_RejectHeavy (github.com/abhipray-cpu/concurx/patterns/throttler) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "3541080 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_DelayPolicy (github.com/abhipray-cpu/concurx/patterns/throttler)",
+            "value": 103.4,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "3425072 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_DelayPolicy (github.com/abhipray-cpu/concurx/patterns/throttler) - ns/op",
+            "value": 103.4,
+            "unit": "ns/op",
+            "extra": "3425072 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_DelayPolicy (github.com/abhipray-cpu/concurx/patterns/throttler) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "3425072 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThrottler_DelayPolicy (github.com/abhipray-cpu/concurx/patterns/throttler) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "3425072 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_NoWrapper (github.com/abhipray-cpu/concurx/patterns/timeout)",
+            "value": 0.3118,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "1000000000 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_NoWrapper (github.com/abhipray-cpu/concurx/patterns/timeout) - ns/op",
+            "value": 0.3118,
+            "unit": "ns/op",
+            "extra": "1000000000 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_NoWrapper (github.com/abhipray-cpu/concurx/patterns/timeout) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "1000000000 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_NoWrapper (github.com/abhipray-cpu/concurx/patterns/timeout) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "1000000000 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_FastSuccess (github.com/abhipray-cpu/concurx/patterns/timeout)",
+            "value": 1391,
+            "unit": "ns/op\t     568 B/op\t       9 allocs/op",
+            "extra": "257587 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_FastSuccess (github.com/abhipray-cpu/concurx/patterns/timeout) - ns/op",
+            "value": 1391,
+            "unit": "ns/op",
+            "extra": "257587 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_FastSuccess (github.com/abhipray-cpu/concurx/patterns/timeout) - B/op",
+            "value": 568,
+            "unit": "B/op",
+            "extra": "257587 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_FastSuccess (github.com/abhipray-cpu/concurx/patterns/timeout) - allocs/op",
+            "value": 9,
+            "unit": "allocs/op",
+            "extra": "257587 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Expiry (github.com/abhipray-cpu/concurx/patterns/timeout)",
+            "value": 1094256,
+            "unit": "ns/op\t     782 B/op\t      10 allocs/op",
+            "extra": "332 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Expiry (github.com/abhipray-cpu/concurx/patterns/timeout) - ns/op",
+            "value": 1094256,
+            "unit": "ns/op",
+            "extra": "332 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Expiry (github.com/abhipray-cpu/concurx/patterns/timeout) - B/op",
+            "value": 782,
+            "unit": "B/op",
+            "extra": "332 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Expiry (github.com/abhipray-cpu/concurx/patterns/timeout) - allocs/op",
+            "value": 10,
+            "unit": "allocs/op",
+            "extra": "332 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Parallel (github.com/abhipray-cpu/concurx/patterns/timeout)",
+            "value": 646.6,
+            "unit": "ns/op\t     568 B/op\t       9 allocs/op",
+            "extra": "464738 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Parallel (github.com/abhipray-cpu/concurx/patterns/timeout) - ns/op",
+            "value": 646.6,
+            "unit": "ns/op",
+            "extra": "464738 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Parallel (github.com/abhipray-cpu/concurx/patterns/timeout) - B/op",
+            "value": 568,
+            "unit": "B/op",
+            "extra": "464738 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Parallel (github.com/abhipray-cpu/concurx/patterns/timeout) - allocs/op",
+            "value": 9,
+            "unit": "allocs/op",
+            "extra": "464738 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Panic (github.com/abhipray-cpu/concurx/patterns/timeout)",
+            "value": 3582,
+            "unit": "ns/op\t     664 B/op\t      11 allocs/op",
+            "extra": "94827 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Panic (github.com/abhipray-cpu/concurx/patterns/timeout) - ns/op",
+            "value": 3582,
+            "unit": "ns/op",
+            "extra": "94827 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Panic (github.com/abhipray-cpu/concurx/patterns/timeout) - B/op",
+            "value": 664,
+            "unit": "B/op",
+            "extra": "94827 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkTimeout_Panic (github.com/abhipray-cpu/concurx/patterns/timeout) - allocs/op",
+            "value": 11,
+            "unit": "allocs/op",
+            "extra": "94827 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_Submit (github.com/abhipray-cpu/concurx/patterns/workerpercore)",
+            "value": 414.5,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "812260 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_Submit (github.com/abhipray-cpu/concurx/patterns/workerpercore) - ns/op",
+            "value": 414.5,
+            "unit": "ns/op",
+            "extra": "812260 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_Submit (github.com/abhipray-cpu/concurx/patterns/workerpercore) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "812260 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_Submit (github.com/abhipray-cpu/concurx/patterns/workerpercore) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "812260 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_CPUWork (github.com/abhipray-cpu/concurx/patterns/workerpercore)",
+            "value": 702.1,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "509646 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_CPUWork (github.com/abhipray-cpu/concurx/patterns/workerpercore) - ns/op",
+            "value": 702.1,
+            "unit": "ns/op",
+            "extra": "509646 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_CPUWork (github.com/abhipray-cpu/concurx/patterns/workerpercore) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "509646 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_CPUWork (github.com/abhipray-cpu/concurx/patterns/workerpercore) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "509646 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_BlockingQueue (github.com/abhipray-cpu/concurx/patterns/workerpercore)",
+            "value": 1045495,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "372 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_BlockingQueue (github.com/abhipray-cpu/concurx/patterns/workerpercore) - ns/op",
+            "value": 1045495,
+            "unit": "ns/op",
+            "extra": "372 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_BlockingQueue (github.com/abhipray-cpu/concurx/patterns/workerpercore) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "372 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_BlockingQueue (github.com/abhipray-cpu/concurx/patterns/workerpercore) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "372 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_FailFast (github.com/abhipray-cpu/concurx/patterns/workerpercore)",
+            "value": 12.47,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "28616934 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_FailFast (github.com/abhipray-cpu/concurx/patterns/workerpercore) - ns/op",
+            "value": 12.47,
+            "unit": "ns/op",
+            "extra": "28616934 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_FailFast (github.com/abhipray-cpu/concurx/patterns/workerpercore) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "28616934 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerPerCore_FailFast (github.com/abhipray-cpu/concurx/patterns/workerpercore) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "28616934 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=1 (github.com/abhipray-cpu/concurx/supervisor)",
+            "value": 20123,
+            "unit": "ns/op\t   18274 B/op\t      28 allocs/op",
+            "extra": "17971 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=1 (github.com/abhipray-cpu/concurx/supervisor) - ns/op",
+            "value": 20123,
+            "unit": "ns/op",
+            "extra": "17971 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=1 (github.com/abhipray-cpu/concurx/supervisor) - B/op",
+            "value": 18274,
+            "unit": "B/op",
+            "extra": "17971 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=1 (github.com/abhipray-cpu/concurx/supervisor) - allocs/op",
+            "value": 28,
+            "unit": "allocs/op",
+            "extra": "17971 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=10 (github.com/abhipray-cpu/concurx/supervisor)",
+            "value": 27440,
+            "unit": "ns/op\t   25307 B/op\t      82 allocs/op",
+            "extra": "12972 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=10 (github.com/abhipray-cpu/concurx/supervisor) - ns/op",
+            "value": 27440,
+            "unit": "ns/op",
+            "extra": "12972 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=10 (github.com/abhipray-cpu/concurx/supervisor) - B/op",
+            "value": 25307,
+            "unit": "B/op",
+            "extra": "12972 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=10 (github.com/abhipray-cpu/concurx/supervisor) - allocs/op",
+            "value": 82,
+            "unit": "allocs/op",
+            "extra": "12972 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=100 (github.com/abhipray-cpu/concurx/supervisor)",
+            "value": 134135,
+            "unit": "ns/op\t  110557 B/op\t     595 allocs/op",
+            "extra": "2726 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=100 (github.com/abhipray-cpu/concurx/supervisor) - ns/op",
+            "value": 134135,
+            "unit": "ns/op",
+            "extra": "2726 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=100 (github.com/abhipray-cpu/concurx/supervisor) - B/op",
+            "value": 110557,
+            "unit": "B/op",
+            "extra": "2726 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_StartStop/children=100 (github.com/abhipray-cpu/concurx/supervisor) - allocs/op",
+            "value": 595,
+            "unit": "allocs/op",
+            "extra": "2726 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_FailureHandling (github.com/abhipray-cpu/concurx/supervisor)",
+            "value": 11381333107,
+            "unit": "ns/op\t     913 B/op\t      14 allocs/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_FailureHandling (github.com/abhipray-cpu/concurx/supervisor) - ns/op",
+            "value": 11381333107,
+            "unit": "ns/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_FailureHandling (github.com/abhipray-cpu/concurx/supervisor) - B/op",
+            "value": 913,
+            "unit": "B/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_FailureHandling (github.com/abhipray-cpu/concurx/supervisor) - allocs/op",
+            "value": 14,
+            "unit": "allocs/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/OneForOne (github.com/abhipray-cpu/concurx/supervisor)",
+            "value": 24.27,
+            "unit": "ns/op\t      16 B/op\t       1 allocs/op",
+            "extra": "14410717 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/OneForOne (github.com/abhipray-cpu/concurx/supervisor) - ns/op",
+            "value": 24.27,
+            "unit": "ns/op",
+            "extra": "14410717 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/OneForOne (github.com/abhipray-cpu/concurx/supervisor) - B/op",
+            "value": 16,
+            "unit": "B/op",
+            "extra": "14410717 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/OneForOne (github.com/abhipray-cpu/concurx/supervisor) - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "14410717 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/AllForOne (github.com/abhipray-cpu/concurx/supervisor)",
+            "value": 24.16,
+            "unit": "ns/op\t      16 B/op\t       1 allocs/op",
+            "extra": "14042382 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/AllForOne (github.com/abhipray-cpu/concurx/supervisor) - ns/op",
+            "value": 24.16,
+            "unit": "ns/op",
+            "extra": "14042382 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/AllForOne (github.com/abhipray-cpu/concurx/supervisor) - B/op",
+            "value": 16,
+            "unit": "B/op",
+            "extra": "14042382 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/AllForOne (github.com/abhipray-cpu/concurx/supervisor) - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "14042382 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/FuncStrategy (github.com/abhipray-cpu/concurx/supervisor)",
+            "value": 25.61,
+            "unit": "ns/op\t      16 B/op\t       1 allocs/op",
+            "extra": "13223610 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/FuncStrategy (github.com/abhipray-cpu/concurx/supervisor) - ns/op",
+            "value": 25.61,
+            "unit": "ns/op",
+            "extra": "13223610 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/FuncStrategy (github.com/abhipray-cpu/concurx/supervisor) - B/op",
+            "value": 16,
+            "unit": "B/op",
+            "extra": "13223610 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkStrategy_OnFailure/FuncStrategy (github.com/abhipray-cpu/concurx/supervisor) - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "13223610 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_Hooks/hooks-disabled (github.com/abhipray-cpu/concurx/supervisor)",
+            "value": 11379069996,
+            "unit": "ns/op\t     913 B/op\t      14 allocs/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_Hooks/hooks-disabled (github.com/abhipray-cpu/concurx/supervisor) - ns/op",
+            "value": 11379069996,
+            "unit": "ns/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_Hooks/hooks-disabled (github.com/abhipray-cpu/concurx/supervisor) - B/op",
+            "value": 913,
+            "unit": "B/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_Hooks/hooks-disabled (github.com/abhipray-cpu/concurx/supervisor) - allocs/op",
+            "value": 14,
+            "unit": "allocs/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_Hooks/hooks-enabled (github.com/abhipray-cpu/concurx/supervisor)",
+            "value": 11379458072,
+            "unit": "ns/op\t     913 B/op\t      14 allocs/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_Hooks/hooks-enabled (github.com/abhipray-cpu/concurx/supervisor) - ns/op",
+            "value": 11379458072,
+            "unit": "ns/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_Hooks/hooks-enabled (github.com/abhipray-cpu/concurx/supervisor) - B/op",
+            "value": 913,
+            "unit": "B/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkSupervisor_Hooks/hooks-enabled (github.com/abhipray-cpu/concurx/supervisor) - allocs/op",
+            "value": 14,
+            "unit": "allocs/op",
+            "extra": "6 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitAndRun (github.com/abhipray-cpu/concurx/workergroup)",
+            "value": 243.6,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "1471366 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitAndRun (github.com/abhipray-cpu/concurx/workergroup) - ns/op",
+            "value": 243.6,
+            "unit": "ns/op",
+            "extra": "1471366 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitAndRun (github.com/abhipray-cpu/concurx/workergroup) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "1471366 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitAndRun (github.com/abhipray-cpu/concurx/workergroup) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "1471366 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitOnly (github.com/abhipray-cpu/concurx/workergroup)",
+            "value": 18.35,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "18803008 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitOnly (github.com/abhipray-cpu/concurx/workergroup) - ns/op",
+            "value": 18.35,
+            "unit": "ns/op",
+            "extra": "18803008 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitOnly (github.com/abhipray-cpu/concurx/workergroup) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "18803008 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitOnly (github.com/abhipray-cpu/concurx/workergroup) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "18803008 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_PanicIsolation (github.com/abhipray-cpu/concurx/workergroup)",
+            "value": 603.6,
+            "unit": "ns/op\t      24 B/op\t       1 allocs/op",
+            "extra": "594916 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_PanicIsolation (github.com/abhipray-cpu/concurx/workergroup) - ns/op",
+            "value": 603.6,
+            "unit": "ns/op",
+            "extra": "594916 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_PanicIsolation (github.com/abhipray-cpu/concurx/workergroup) - B/op",
+            "value": 24,
+            "unit": "B/op",
+            "extra": "594916 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_PanicIsolation (github.com/abhipray-cpu/concurx/workergroup) - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "594916 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitReject (github.com/abhipray-cpu/concurx/workergroup)",
+            "value": 10.26,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "34024983 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitReject (github.com/abhipray-cpu/concurx/workergroup) - ns/op",
+            "value": 10.26,
+            "unit": "ns/op",
+            "extra": "34024983 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitReject (github.com/abhipray-cpu/concurx/workergroup) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "34024983 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkWorkerGroup_SubmitReject (github.com/abhipray-cpu/concurx/workergroup) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "34024983 times\n4 procs"
           }
         ]
       }
